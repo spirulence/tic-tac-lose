@@ -186,6 +186,9 @@ const transitions = {
     "x,_,o,o,_,o,x,_,x": "x,_,o,o,_,o,x,x,x", //win
     "x,_,o,o,_,_,x,o,x": "x,_,o,o,x,_,x,o,x", //win
 
+    "x,o,x,o,x,_,o,_,_": "x,o,x,o,x,_,o,_,x", //win
+    "x,o,x,o,x,_,_,_,o": "x,o,x,o,x,_,x,_,o", //win
+
     "x,o,o,_,o,_,_,x,x": "x,o,o,_,o,_,x,x,x", //win
     "x,o,_,o,o,_,_,x,x": "x,o,_,o,o,_,x,x,x", //win
     "x,o,_,_,o,o,_,x,x": "x,o,_,_,o,o,x,x,x", //win
@@ -377,6 +380,8 @@ class Grid extends Component {
         } else if ([c[2], c[5], c[8]].join("") === "xxx") {
             return true;
         } else if ([c[0], c[3], c[6]].join("") === "xxx") {
+            return true;
+        } else if ([c[2], c[4], c[6]].join("") === "xxx") {
             return true;
         } else return [c[0], c[4], c[8]].join("") === "xxx";
     }
